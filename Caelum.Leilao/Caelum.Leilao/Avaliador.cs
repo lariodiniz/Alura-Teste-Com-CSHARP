@@ -10,6 +10,7 @@ namespace Caelum.Leilao
     {
         private double maiorDeTodos = Double.MinValue;
         private double menorDeTodos = Double.MaxValue;
+        private List<Lance> maiores;
 
         public void Avalia(Leilao leilao)
         {
@@ -24,6 +25,19 @@ namespace Caelum.Leilao
                     menorDeTodos = lance.Valor;
                 }
             }
+
+            pegaOsMaioresNo(leilao);
+        }
+
+        private void pegaOsMaioresNo(Leilao leilao)
+        {
+            maiores = new List<Lance>(leilao.Lances.OrderByDescending(x => x.Valor));
+            maiores = maiores.GetRange(0, maiores.Count > 3 ? 3 : maiores.Count);
+        }
+
+        public List<Lance> TresMaiores
+        {
+            get { return this.maiores; }
         }
 
         public double MaiorLance

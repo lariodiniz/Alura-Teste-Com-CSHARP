@@ -47,7 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AvaliadorTest.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="FiltroDeLancesTest.cs" />
+    <Compile Include="MatematicaMalucaTest.cs" />
     <Compile Include="PalindromoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
