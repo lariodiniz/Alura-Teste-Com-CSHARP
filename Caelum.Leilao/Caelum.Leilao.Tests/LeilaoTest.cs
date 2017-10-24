@@ -12,6 +12,20 @@ namespace Caelum.Leilao
     public class LeilaoTest
     {
         [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void DeveRecusarLancesComValorDeZero()
+        {
+            new Lance(new Usuario("John Doe"), 0);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void DeveRecusarLancesComValorNegativo()
+        {
+            new Lance(new Usuario("John Doe"), -10);
+        }
+
+        [Test]
         public void DeveReceberUmLance()
         {
             Leilao leilao = new Leilao("Macbook Pro 15");

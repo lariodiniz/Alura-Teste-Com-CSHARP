@@ -44,7 +44,17 @@ namespace Caelum.Leilao
             Assert.AreEqual(maiorEsperado, leiloeiro.MaiorLance);
             Assert.AreEqual(menorEsperado, leiloeiro.Menorlance);
         }
-        
+
+        [Test]
+        [ExpectedException(typeof(Exception))]
+        public void naoDeveAvaliarLeilaoesSemnenhumLanceDado()
+        {
+           Leilao leilao = new CriadorDeLeilao().Para("Playstation 3 Novo")
+                        .Constroi();
+            
+           leiloeiro.Avalia(leilao);
+        }
+
         [Test]
         public void DeveEndenderLeilaoComApenasUmLance()
         {
