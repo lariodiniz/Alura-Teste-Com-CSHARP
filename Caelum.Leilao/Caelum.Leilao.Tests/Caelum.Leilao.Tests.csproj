@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AnoBissextoTest.cs" />
     <Compile Include="AvaliadorTest.cs" />
+    <Compile Include="CriadorDeLeilao.cs" />
     <Compile Include="FiltroDeLancesTest.cs" />
     <Compile Include="LeilaoTest.cs" />
     <Compile Include="MatematicaMalucaTest.cs" />
